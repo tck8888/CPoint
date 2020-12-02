@@ -97,33 +97,33 @@ void transformFunctionPoint() {
 }
 
 
-int main() {
-    int n = 5;
-    fptr1 = squared;
-    printf("%d squared is %d\n", n, fptr1(5));
-
-    funcptr fptr2;
-    fptr2 = squared;
-
-    printf("%d squared is %d\n", n, fptr2(5));
-
-    int a = 5;
-    int b = 3;
-
-    printf("compute add result             %d\n", compute(add, a, b));
-    printf("compute subtract result        %d\n", compute(subtract, a, b));
-
-
-    printf("evaluate + result              %d\n", evaluate('+', a, b));
-    printf("evaluate - result              %d\n", evaluate('-', a, b));
-
-    initialOperationsArray();
-
-    printf("evaluateArray + result         %d\n", evaluateArray('+', a, b));
-    printf("evaluateArray - result         %d\n", evaluateArray('-', a, b));
-
-    compareFunctionPoint();
-
-    transformFunctionPoint();
-    return 0;
-}
+//int main() {
+//    int n = 5;
+//    fptr1 = squared;
+//    printf("%d squared is %d\n", n, fptr1(5));
+//
+//    funcptr fptr2;
+//    fptr2 = squared;
+//
+//    printf("%d squared is %d\n", n, fptr2(5));
+//
+//    int a = 5;
+//    int b = 3;
+//
+//    printf("compute add result             %d\n", compute(add, a, b));
+//    printf("compute subtract result        %d\n", compute(subtract, a, b));
+//
+//
+//    printf("evaluate + result              %d\n", evaluate('+', a, b));
+//    printf("evaluate - result              %d\n", evaluate('-', a, b));
+//
+//    initialOperationsArray();
+//
+//    printf("evaluateArray + result         %d\n", evaluateArray('+', a, b));
+//    printf("evaluateArray - result         %d\n", evaluateArray('-', a, b));
+//
+//    compareFunctionPoint();
+//
+//    transformFunctionPoint();
+//    return 0;
+//}
