@@ -73,6 +73,29 @@ int evaluateArray(char opcode, int a, int b) {
 
 //比较函数指针
 
+void compareFunctionPoint() {
+    fptrOperation fptr1 = add;
+    if (fptr1 == add) {
+        printf("fptr1 point to add function \n");
+    } else {
+        printf("fptr1 does not point to add function \n");
+    }
+}
+
+//转换函数指针
+
+typedef int (*fptrToSingleInt)(int);
+
+typedef int (*fptrToSingleTwoInts)(int, int);
+
+void transformFunctionPoint() {
+    fptrToSingleTwoInts fptrFirst = add;
+    fptrToSingleInt fptrSecond = (fptrToSingleInt) fptrFirst;
+    fptrFirst=(fptrToSingleTwoInts)fptrSecond;
+
+    printf("%d",fptrFirst(5,6));
+}
+
 
 int main() {
     int n = 5;
@@ -99,6 +122,8 @@ int main() {
     printf("evaluateArray + result         %d\n", evaluateArray('+', a, b));
     printf("evaluateArray - result         %d\n", evaluateArray('-', a, b));
 
+    compareFunctionPoint();
 
+    transformFunctionPoint();
     return 0;
 }
