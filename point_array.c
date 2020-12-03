@@ -56,8 +56,8 @@ void creatArrayByMalloc() {
 char *trim(char *phrase) {
     char *old = phrase;
     char *new = phrase;
-    printf("%p ",old);
-    printf("%p",new);
+    printf("%p ", old);
+    printf("%p", new);
     while (*old == ' ') {
         old++;
     }
@@ -75,6 +75,64 @@ void creatArrayByRealloc() {
     printf("%s\n", trim(buffer));
 }
 
+//用数组表示法
+
+void displayArray(int arr[], int size) {
+    for (int i = 0; i < size; ++i) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+}
+
+void test2() {
+    int vector[5] = {1, 2, 3, 4, 5};
+    displayArray(vector, 5);
+
+    printf("%lu\n", sizeof(vector));
+}
+
+//用指针表示法
+void displayArray2(int *arr, int size) {
+    for (int i = 0; i < size; ++i) {
+        printf("*(arr + %d)=%d ", i, *(arr + i));
+        printf("arr[%d]=%d", i, arr[i]);
+        printf("\n");
+    }
+}
+
+void test3() {
+    int vector[5] = {1, 2, 3, 4, 5};
+    displayArray2(vector, 5);
+}
+
+
+void array7() {
+    int *arr[5];
+    for (int i = 0; i < 5; ++i) {
+        arr[i] = (int *) malloc(sizeof(int));
+        *arr[i] = i;
+    }
+    printf("使用指针数组\n");
+
+    for (int i = 0; i < 5; ++i) {
+        printf("%d ", *arr[i]);
+    }
+    printf("\n");
+}
+
+void array8() {
+    int *arr[5];
+    for (int i = 0; i < 5; ++i) {
+        arr[i] = (int *) malloc(sizeof(int));
+        **(arr + i) = i;
+    }
+    printf("使用指针数组2\n");
+
+    for (int i = 0; i < 5; ++i) {
+        printf("%d ", **(arr+i));
+    }
+    printf("\n");
+}
 
 int main() {
     array1();
@@ -83,5 +141,10 @@ int main() {
     array4();
     creatArrayByMalloc();
     creatArrayByRealloc();
+    test2();
+    test3();
+
+    array7();
+    array8();
     return 0;
 }
