@@ -134,17 +134,17 @@ void array8() {
     printf("\n");
 }
 
-int main() {
-    array1();
-    array2();
-    array3();
-    array4();
-    creatArrayByMalloc();
-    creatArrayByRealloc();
-    test2();
-    test3();
-
-    array7();
-    array8();
-    return 0;
-}
+//int main() {
+//    array1();
+//    array2();
+//    array3();
+//    array4();
+//    creatArrayByMalloc();
+//    creatArrayByRealloc();
+//    test2();
+//    test3();
+//
+//    array7();
+//    array8();
+//    return 0;
+//}
